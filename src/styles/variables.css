@@ -1,0 +1,18 @@
+:root {
+  --color-dark: #1C1803;
+  --color-gold: #C8A96B;
+  --color-light: #FFFDF9;
+  --color-bg: #F8F5F0;
+  --color-secondary: #6B6458;
+  --color-card: #E7DFD4;
+
+  --font-title: "Poppins", sans-serif;
+  --font-text: "Inter", sans-serif;
+
+  --radius-btn: 8px;
+  --radius-card: 16px;
+  --radius-input: 10px;
+
+  --shadow-card: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-header: 0 2px 12px rgba(0,0,0,0.10);
+}
