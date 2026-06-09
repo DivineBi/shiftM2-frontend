@@ -1,0 +1,143 @@
+/* src/styles/login.css */
+
+/* Wrapper global */
+.login-wrapper {
+  background-color: #FFFDF9;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+/* Carte centrale */
+.login-card {
+  background: white;
+  border-radius: 16px;
+  padding: 50px 40px;
+  width: 420px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* Logo SHIFT */
+.login-logo {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1C1803;
+  margin-bottom: 10px;
+}
+.login-logo-img {
+  width: 140px;
+  margin: 0 auto 20px auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+
+/* Titre */
+.login-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1C1803;
+  margin-bottom: 30px;
+}
+
+/* Labels */
+.login-label {
+  display: block;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1C1803;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+.login-input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d8d2c4;
+  background: #FFFDF9;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.login-input:focus {
+  border-color: #1C1803;
+  box-shadow: 0 0 0 2px rgba(28, 24, 3, 0.15);
+}
+
+/* Mot de passe et icône */
+.password-container {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #1C1803;
+  cursor: pointer;
+}
+
+/* Options */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.remember-me {
+  font-size: 14px;
+  color: #1C1803;
+}
+
+.forgot-link {
+  font-size: 14px;
+  color: #1C1803;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Bouton */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1C1803;
+  color: #FFFDF9;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: 0.2s;
+}
+
+.login-btn:hover {
+  opacity: 0.85;
+}
+
+/* Inscription */
+.signup-text {
+  font-size: 14px;
+  color: #1C1803;
+}
+
+.signup-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1C1803;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}

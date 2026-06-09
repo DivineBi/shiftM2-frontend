@@ -1,0 +1,135 @@
+/* src/styles/register.css */
+/* Wrapper global */
+.register-wrapper {
+  background-color: #FFFDF9;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+/* Carte */
+.register-card {
+  background: white;
+  border-radius: 16px;
+  padding: 50px 40px;
+  width: 460px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* Logo */
+.register-logo-img {
+  width: 140px;
+  margin: 0 auto 20px auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+/* Titres */
+.register-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1C1803;
+  margin-bottom: 6px;
+}
+
+.register-subtitle {
+  font-size: 15px;
+  color: #5a5648;
+  margin-bottom: 30px;
+}
+
+/* Labels */
+.register-label,
+.register-form label {
+  display: block;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1C1803;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+.register-input,
+.register-form input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d8d2c4;
+  background: #FFFDF9;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.register-input:focus,
+.register-form input:focus {
+  border-color: #1C1803;
+  box-shadow: 0 0 0 2px rgba(28, 24, 3, 0.15);
+}
+
+/* Password container */
+.password-container {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #1C1803;
+  cursor: pointer;
+}
+
+/* Messages */
+.register-error {
+  color: #b30000;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.register-success {
+  color: #0a7a0a;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Bouton */
+.register-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1C1803;
+  color: #FFFDF9;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.register-btn:hover {
+  opacity: 0.85;
+}
+
+/* Footer */
+.register-footer-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #1C1803;
+}
+
+.register-footer-text a {
+  font-weight: 600;
+  color: #1C1803;
+  text-decoration: none;
+}
+
+.register-footer-text a:hover {
+  text-decoration: underline;
+}
