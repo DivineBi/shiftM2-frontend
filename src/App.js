@@ -6,13 +6,16 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import HomePage from "./pages/HomePage";
+import Boutique from "./pages/Boutique";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import Dashboard from "./pages/Admin/Dashboard";
 import UsersPage from "./pages/Admin/UsersPage";
+import Arrivals from "./pages/Arrivals";
+import OffersPage from "./pages/OffersPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 import AuditLogPage from "./pages/Admin/AuditLogPage";
 import ProtectedRoute from "./components/ProtectedRoute";
-
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +28,12 @@ function App() {
             
             {/* Page d'accueil */}
             <Route path="/" element={<HomePage />} />
+
+            <Route path="/boutique" element={<Boutique />} />
+            <Route path="/nouveautes" element={<Arrivals />} />
+            <Route path="/offres" element={<OffersPage />} />
+            <Route path="/product/:id" element={<ProductDetailPage />} />
+
 
             {/* Auth */}
             <Route path="/login" element={<LoginPage />} />

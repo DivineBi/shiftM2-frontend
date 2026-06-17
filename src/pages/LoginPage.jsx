@@ -21,7 +21,7 @@ export default function LoginPage() {
     try {
       const data = await login(email, password);
 
-      // Stockage du token + rôle
+      // Stockage du token et rôle
       setAuthData(data);
 
       // Redirection selon rôle

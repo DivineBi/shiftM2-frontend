@@ -1,30 +1,19 @@
 import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import HeroBanner from "../components/home/HeroBanner";
+import PopularProducts from "../components/home/PopularProducts";
 import "../styles/home.css";
 
 export default function HomePage() {
   return (
     <>
-      <main className="home">
+      <main className="home-container">
 
-        {/* SECTION HERO */}
-        <section className="hero">
-          <h1>Découvrez nos meilleures offres</h1>
-          <p>Smart Pricing. Maximum Value.</p>
-          <button className="cta">Voir le catalogue</button>
-        </section>
+        <HeroBanner />
 
-        {/* SECTION PRODUITS (placeholder) */}
-        <section className="product-preview">
-          <h2>Produits populaires</h2>
 
-          {/* ProductCard */}
-          <div className="product-grid">
-            <div className="placeholder-card">Produit 1</div>
-            <div className="placeholder-card">Produit 2</div>
-            <div className="placeholder-card">Produit 3</div>
-          </div>
+        <section className="home-section">
+          <h2 className="home-section-title">Produits populaires</h2>
+          <PopularProducts />
         </section>
 
       </main>
