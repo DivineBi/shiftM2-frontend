@@ -35,9 +35,9 @@ export default function Header() {
 
         {/* Navigation centrale */}
         <nav className="nav">
-          <Link to="/catalogue">Catalogue</Link>
-          <Link to="/promotions">Promotions</Link>
-          <Link to="/about">À propos</Link>
+          <Link to="/nouveautes">Nouveautés</Link>
+          <Link to="/boutique">Boutique</Link>
+          <Link to="/offres">Offres</Link>
         </nav>
 
         {/* Icônes à droite */}

@@ -1,0 +1,25 @@
+/* 🌐 Conteneur global de la page Nouveautés */
+.arrivals-container {
+  max-width: 1600px;      /* largeur max */
+  margin: 0 auto;         /* centre la page */
+  padding: 20px;          /* espace interne */
+}
+
+/* Titre */
+.arrivals-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Grille des produits */
+.arrivals-grid {
+  margin-top: 20px;
+}
+
+/* Si ProductGrid n'a pas de conteneur, tu peux ajouter : */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
+}
