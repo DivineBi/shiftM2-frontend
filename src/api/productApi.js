@@ -2,25 +2,26 @@
 
 import axios from "axios";
 
-const API_URL = "/api/products";
+const API = process.env.REACT_APP_API_URL; // https://shiftm2-backend.onrender.com
 
 export const getProducts = async (params) => {
-  const response = await axios.get(API_URL, { params });
+  const response = await axios.get(`${API}/api/products`, { params });
   return response.data;
 };
 
 export const getProductById = async (id) => {
-  const response = await axios.get(`${API_URL}/${id}`);
+  const response = await axios.get(`${API}/api/products/${id}`);
   return response.data;
 };
 
 export const getDiscountedProducts = async (params) => {
-  const response = await axios.get("/api/products/offers", { params });
+  const response = await axios.get(`${API}/api/products/offers`, { params });
   return response.data;
 };
 
 export const getPopularProducts = async () => {
-  const response = await axios.get("/api/products/popular");
+  const response = await axios.get(`${API}/api/products/popular`);
   return response.data;
 };
+
 
