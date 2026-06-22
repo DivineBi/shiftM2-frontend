@@ -1,7 +1,7 @@
 // src/components/home/PopularProducts.jsx
 
 import React, { useEffect, useState }  from "react";
-import ProductCard from "../ProductCard";
+import ProductCard from "./../ProductCard";
 import { getPopularProducts } from "../../api/productApi";
 
 
