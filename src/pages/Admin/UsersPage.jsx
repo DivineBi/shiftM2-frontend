@@ -1,6 +1,6 @@
 // src/pages/Admin/UsersPage.jsx
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { getUsers } from "../../api/adminUserApi";
 import "../../styles/admin-users.css";
 
@@ -8,22 +8,21 @@ export default function UsersPage() {
   const [data, setData] = useState(null);
   const [page, setPage] = useState(0);
   const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    load();
-  }, [page, search]);
-
-  async function load() {
+  
+  const load = useCallback(async () => {
     const res = await getUsers({ page, size: 10, search });
     setData(res);
-  }
+  }, [page, search]);
+  
+  useEffect(() => {
+    load();
+  }, [load]);
 
   return (
     <div className="admin-page">
 
       <h1 className="admin-title">Gestion des utilisateurs</h1>
 
-      {/* Barre de recherche */}
       <input
         className="admin-search"
         placeholder="Rechercher un utilisateur..."
@@ -31,7 +30,6 @@ export default function UsersPage() {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      {/* Tableau */}
       {data && (
         <div className="table-wrapper">
           <table className="admin-table">
@@ -58,13 +56,9 @@ export default function UsersPage() {
         </div>
       )}
 
-      {/* Pagination */}
       {data && (
         <div className="pagination">
-          <button
-            disabled={page === 0}
-            onClick={() => setPage(page - 1)}
-          >
+          <button disabled={page === 0} onClick={() => setPage(page - 1)}>
             Précédent
           </button>
 
@@ -81,4 +75,5 @@ export default function UsersPage() {
 
     </div>
   );
+
 }

@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 
 export default function useProducts() {
 
-  // Initialisation des filtres
   const [filters, setFilters] = useState({
     color: "",
     sizeFilter: "",
@@ -16,11 +15,7 @@ export default function useProducts() {
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    loadProducts();
-  }, [page, filters]);
-
-  const loadProducts = async () => {
+    const loadProducts = useCallback(async () => {
     setLoading(true);
     try {
       const response = await axios.get("/api/products", {
@@ -43,7 +38,11 @@ export default function useProducts() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [page, filters]);
+  
+  useEffect(() => {
+    loadProducts();
+  }, [loadProducts]);
 
   return {
     products,
@@ -54,4 +53,5 @@ export default function useProducts() {
     setFilters,
     loading
   };
+
 }

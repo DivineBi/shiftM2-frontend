@@ -1,6 +1,6 @@
 // src/pages/Admin/AuditLogPage.jsx
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { getAuditLogs } from "../../api/auditLogApi";
 import "../../styles/admin-audit.css";
 
@@ -9,21 +9,20 @@ export default function AuditLogPage() {
   const [page, setPage] = useState(0);
   const [search, setSearch] = useState("");
 
-  useEffect(() => {
-    load();
-  }, [page, search]);
-
-  async function load() {
+  const load = useCallback(async () => {
     const res = await getAuditLogs({ page, size: 20, search });
     setData(res);
-  }
+  }, [page, search]);
+
+  useEffect(() => {
+    load();
+  }, [load]);
 
   return (
     <div className="admin-page">
 
       <h1 className="admin-title">Logs d’audit</h1>
 
-      {/* Barre de recherche */}
       <input
         className="admin-search"
         placeholder="Rechercher une action, un admin..."
@@ -31,7 +30,6 @@ export default function AuditLogPage() {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      {/* Tableau */}
       {data && (
         <div className="table-wrapper">
           <table className="admin-table">
@@ -58,7 +56,6 @@ export default function AuditLogPage() {
         </div>
       )}
 
-      {/* Pagination */}
       {data && (
         <div className="pagination">
           <button disabled={page === 0} onClick={() => setPage(page - 1)}>
@@ -78,4 +75,5 @@ export default function AuditLogPage() {
 
     </div>
   );
+
 }
