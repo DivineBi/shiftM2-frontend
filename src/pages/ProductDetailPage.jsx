@@ -1,6 +1,6 @@
 // src/pages/ProductDetailPage.jsx
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { getProductById } from "../api/productApi";
 import "../styles/product-detail-page.css";
@@ -10,11 +10,7 @@ export default function ProductDetailPage() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    loadProduct();
-  }, []);
-
-  const loadProduct = async () => {
+  const loadProduct = useCallback(async () => {
     try {
       const data = await getProductById(id);
       setProduct(data);
@@ -23,7 +19,11 @@ export default function ProductDetailPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
+ 
+  useEffect(() => {
+    loadProduct();
+  }, [loadProduct]);
 
   if (loading) return <p>Chargement...</p>;
   if (!product) return <p>Produit introuvable.</p>;
@@ -56,7 +56,6 @@ export default function ProductDetailPage() {
 
         <button className="add-to-cart-btn">Ajouter au panier</button>
 
-        {/* Historique des variations */}
         {product.priceVariations && product.priceVariations.length > 0 && (
           <div className="price-history">
             <h3>Historique des variations</h3>
@@ -74,4 +73,5 @@ export default function ProductDetailPage() {
 
     </div>
   );
+
 }

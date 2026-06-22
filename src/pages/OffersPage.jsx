@@ -1,6 +1,6 @@
 // src/pages/OffersPage.jsx
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback  } from "react";
 import { getDiscountedProducts } from "../api/productApi";
 import ProductCard from "../components/ProductCard";
 import Pagination from "../components/Pagination";
@@ -11,18 +11,14 @@ export default function OffersPage() {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
-
-  useEffect(() => {
-    loadOffers();
-  }, [page]);  // Recharger les offres à chaque changement de page
-
-  const loadOffers = async () => {
+ 
+  const loadOffers = useCallback(async () => {
     try {
       setLoading(true);
 
       const data = await getDiscountedProducts({
         page,
-        size: 12  // Nombre d'offres par page
+        size: 12
       });
 
       setProducts(data.content);
@@ -32,7 +28,11 @@ export default function OffersPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [page]);
+  
+  useEffect(() => {
+    loadOffers();
+  }, [loadOffers]);
 
   if (loading) return <p>Chargement des offres...</p>;
 
@@ -44,13 +44,12 @@ export default function OffersPage() {
         <p>Aucune promotion disponible pour le moment.</p>
       ) : (
         <>
-        <div className="offers-grid">
-          {products.map(product => (
-            <ProductCard key={product.idProduct} product={product} />
-          ))}
-        </div>
+          <div className="offers-grid">
+            {products.map(product => (
+              <ProductCard key={product.idProduct} product={product} />
+            ))}
+          </div>
 
-        {/* Pagination */}
           {totalPages > 1 && (
             <Pagination
               page={page}
@@ -62,4 +61,5 @@ export default function OffersPage() {
       )}
     </div>
   );
+
 }
