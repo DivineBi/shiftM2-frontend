@@ -4,6 +4,7 @@ import axios from "axios";
 export default function useProducts() {
 
   const API = process.env.REACT_APP_API_URL || "https://shiftm2-backend.onrender.com";
+  console.log("API =", API)
   
   const [filters, setFilters] = useState({
     color: "",

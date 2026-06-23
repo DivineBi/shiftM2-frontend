@@ -17,7 +17,7 @@ import AuditLogPage from "./pages/Admin/AuditLogPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/shiftm2-frontend">
      <div className="app-container">
 
         <Header />
