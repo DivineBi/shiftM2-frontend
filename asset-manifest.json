@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shiftM2-frontend/static/css/main.cf9ec271.css",
-    "main.js": "/shiftM2-frontend/static/js/main.ab251d07.js",
+    "main.js": "/shiftM2-frontend/static/js/main.836b52f4.js",
     "static/js/453.e15283f0.chunk.js": "/shiftM2-frontend/static/js/453.e15283f0.chunk.js",
     "static/media/hero-bg.jpg": "/shiftM2-frontend/static/media/hero-bg.186b580e357f2c29baba.jpg",
     "static/media/fullLogo.png": "/shiftM2-frontend/static/media/fullLogo.6912377320efd18e2529.png",
@@ -9,11 +9,11 @@
     "static/media/simpleLogo.png": "/shiftM2-frontend/static/media/simpleLogo.fb2de4347ef00631ba84.png",
     "index.html": "/shiftM2-frontend/index.html",
     "main.cf9ec271.css.map": "/shiftM2-frontend/static/css/main.cf9ec271.css.map",
-    "main.ab251d07.js.map": "/shiftM2-frontend/static/js/main.ab251d07.js.map",
+    "main.836b52f4.js.map": "/shiftM2-frontend/static/js/main.836b52f4.js.map",
     "453.e15283f0.chunk.js.map": "/shiftM2-frontend/static/js/453.e15283f0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cf9ec271.css",
-    "static/js/main.ab251d07.js"
+    "static/js/main.836b52f4.js"
   ]
 }
