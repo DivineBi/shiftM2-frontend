@@ -17,60 +17,51 @@ import AuditLogPage from "./pages/Admin/AuditLogPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
-    <BrowserRouter basename="/shiftm2-frontend">
-     <div className="app-container">
+    <div className="app-container">
+      <Header />
 
-        <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/boutique" element={<Boutique />} />
+          <Route path="/nouveautes" element={<Arrivals />} />
+          <Route path="/offres" element={<OffersPage />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
 
-        <main>
-          <Routes>
-            
-            {/* Page d'accueil */}
-            <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
 
-            <Route path="/boutique" element={<Boutique />} />
-            <Route path="/nouveautes" element={<Arrivals />} />
-            <Route path="/offres" element={<OffersPage />} />
-            <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route
+            path="/admin/dashboard"
+            element={
+              <ProtectedRoute adminOnly>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
 
+          <Route
+            path="/admin/users"
+            element={
+              <ProtectedRoute adminOnly>
+                <UsersPage />
+              </ProtectedRoute>
+            }
+          />
 
-            {/* Auth */}
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            {/* Admin */}
-            <Route
-              path="/admin/dashboard"
-              element={
-                <ProtectedRoute adminOnly>
-                  <Dashboard />
-                </ProtectedRoute>
-              }
-            />
+          <Route
+            path="/admin/audit"
+            element={
+              <ProtectedRoute adminOnly>
+                <AuditLogPage />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </main>
 
-            <Route
-              path="/admin/users"
-              element={
-                <ProtectedRoute adminOnly>
-                  <UsersPage />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/admin/audit"
-              element={
-                <ProtectedRoute adminOnly>
-                  <AuditLogPage />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-        </main>
-
-        <Footer />
-
-      </div>
-    </BrowserRouter>
+      <Footer />
+    </div>
   );
 }
 
