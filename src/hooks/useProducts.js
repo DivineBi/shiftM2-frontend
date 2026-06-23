@@ -40,7 +40,7 @@ export default function useProducts() {
     } finally {
       setLoading(false);
     }
-  }, [page, filters]);
+  }, [page, filters, API]);
   
   useEffect(() => {
     loadProducts();
