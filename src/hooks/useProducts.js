@@ -20,6 +20,7 @@ export default function useProducts() {
     const loadProducts = useCallback(async () => {
     setLoading(true);
     try {
+      console.log("API =", API);
       const response = await axios.get(`${API}/api/products`, {
         params: {
           page,
