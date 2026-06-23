@@ -3,6 +3,8 @@ import axios from "axios";
 
 export default function useProducts() {
 
+  const API = process.env.REACT_APP_API_URL;
+  
   const [filters, setFilters] = useState({
     color: "",
     sizeFilter: "",
@@ -18,7 +20,7 @@ export default function useProducts() {
     const loadProducts = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await axios.get("/api/products", {
+      const response = await axios.get(`${API}/api/products`, {
         params: {
           page,
           size: 12,
