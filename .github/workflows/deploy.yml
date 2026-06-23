@@ -2,7 +2,7 @@ name: Deploy React App
 
 permissions:
   contents: write
-  
+
 on:
   push:
     branches:
@@ -20,6 +20,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+
+      - name: Inject environment variables
+        run: echo "REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }}" >> .env.production
 
       - name: Install dependencies
         run: npm install
