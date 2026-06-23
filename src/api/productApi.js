@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const API = process.env.REACT_APP_API_URL; // https://shiftm2-backend.onrender.com
+const API = process.env.REACT_APP_API_URL || "https://shiftm2-backend.onrender.com"; 
 
 export const getProducts = async (params) => {
   const response = await axios.get(`${API}/api/products`, { params });
