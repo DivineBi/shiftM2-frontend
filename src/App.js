@@ -57,9 +57,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/shiftM2-frontend" element={<Navigate to="/" replace />} />
-          <Route path="/shiftM2-frontend/" element={<Navigate to="/" replace />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          
         </Routes>
       </main>
 
